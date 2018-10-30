@@ -1,9 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
+import expect from 'expect';
 import App from './App';
+import Header from './components/layouts/Header';
+import Routes from './routes';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  shallow(<App />);
+});
+
+it('includes header', () => {
+  const app = shallow(<App />);
+  expect(app.containsMatchingElement(<Header />)).toEqual(true)
+});
+
+it('includes routes', () => {
+  const app = shallow(<App />);
+  expect(app.containsMatchingElement(<Routes />)).toEqual(true)
 });

@@ -70,17 +70,9 @@ class UserListRow extends React.Component {
 		.then(json => {
 		 	this.setState({
 		 		dialogBackground: {
-		 			/*backgroundImage: `url(${json.background_url})`*/
-		 			backgroundImage: `url(https://thumbs.dreamstime.com/t/white-wood-planks-background-rustic-white-wood-planks-background-wood-texture-109733114.jpg)`
+		 			backgroundImage: `url(${json.background_url})`
 		 		},
-		 		// userDetails: json, //dla macaroo
-		 		userDetails: {
-		 			id: 10,
-		 			first_name: json.name,
-		 			last_name: json.name,
-		 			age: 29,
-		 			avatar: 'https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png'
-		 		},
+		 		userDetails: json,
 		 		open: true,
 		 		isLoaded: true
 		 	});
